@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Smart Study Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        SmartStudy
+    </div>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#add">Add Topic</a>
+        <a href="#topics">My Topics</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            SMART ACADEMIC PLANNER
+        </span>
+
+        <h1>
+            Study Smarter.
+            <span>Track Your Progress.</span>
+        </h1>
+
+        <p>
+            Organize your subjects, track chapters and
+            stay on top of your study goals.
+        </p>
+
+        <a href="#add" class="hero-btn">
+            Add Study Topic
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="dashboard" id="dashboard">
+
+    <div class="section-title">
+
+        <h2>
+            Study Dashboard
+        </h2>
+
+        <p>
+            Monitor your learning progress.
+        </p>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                T
+            </div>
+
+            <h3 id="totalTopics">
+                0
+            </h3>
+
+            <p>
+                Total Topics
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon completed-icon">
+                ✓
+            </div>
+
+            <h3 id="completedTopics">
+                0
+            </h3>
+
+            <p>
+                Completed
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon progress-icon">
+                →
+            </div>
+
+            <h3 id="progressTopics">
+                0
+            </h3>
+
+            <p>
+                In Progress
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon pending-icon">
+                !
+            </div>
+
+            <h3 id="pendingTopics">
+                0
+            </h3>
+
+            <p>
+                Pending
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="overall-progress">
+
+        <div class="progress-header">
+
+            <strong>
+                Overall Study Progress
+            </strong>
+
+            <span id="progressPercentage">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                id="progressFill"
+                class="progress-fill"
+            ></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="add-section" id="add">
+
+    <div class="section-title">
+
+        <h2>
+            Add Study Topic
+        </h2>
+
+        <p>
+            Create a new topic for your study plan.
+        </p>
+
+    </div>
+
+
+    <div class="form-card">
+
+        <form id="studyForm">
+
+            <div class="form-group">
+
+                <label>
+                    Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Example: DBMS"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Topic / Chapter
+                </label>
+
+                <input
+                    type="text"
+                    id="topic"
+                    placeholder="Example: Normalization"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Difficulty
+                </label>
+
+                <select id="difficulty">
+
+                    <option value="Easy">
+                        Easy
+                    </option>
+
+                    <option value="Medium">
+                        Medium
+                    </option>
+
+                    <option value="Hard">
+                        Hard
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Status
+                </label>
+
+                <select id="status">
+
+                    <option value="Not Started">
+                        Not Started
+                    </option>
+
+                    <option value="In Progress">
+                        In Progress
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Target Date
+                </label>
+
+                <input
+                    type="date"
+                    id="targetDate"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="add-btn"
+            >
+                Add Topic
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<section class="topics-section" id="topics">
+
+    <div class="section-title">
+
+        <h2>
+            My Study Topics
+        </h2>
+
+        <p>
+            Search, filter and manage your topics.
+        </p>
+
+    </div>
+
+
+    <div class="controls">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search subject or topic..."
+        >
+
+
+        <select id="subjectFilter">
+
+            <option value="All">
+                All Subjects
+            </option>
+
+        </select>
+
+
+        <select id="statusFilter">
+
+            <option value="All">
+                All Status
+            </option>
+
+            <option value="Not Started">
+                Not Started
+            </option>
+
+            <option value="In Progress">
+                In Progress
+            </option>
+
+            <option value="Completed">
+                Completed
+            </option>
+
+        </select>
+
+
+        <select id="difficultyFilter">
+
+            <option value="All">
+                All Difficulty
+            </option>
+
+            <option value="Easy">
+                Easy
+            </option>
+
+            <option value="Medium">
+                Medium
+            </option>
+
+            <option value="Hard">
+                Hard
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div
+        id="topicsContainer"
+        class="topics-grid"
+    ></div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 SmartStudy | Smart Academic Planner
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
